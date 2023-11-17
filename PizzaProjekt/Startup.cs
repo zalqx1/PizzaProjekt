@@ -23,6 +23,9 @@ namespace PizzaProjekt
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddRazorPages()
+                .AddRazorRuntimeCompilation();
+
             services.AddControllersWithViews();
         }
 
@@ -32,6 +35,7 @@ namespace PizzaProjekt
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseBrowserLink();
             }
             else
             {

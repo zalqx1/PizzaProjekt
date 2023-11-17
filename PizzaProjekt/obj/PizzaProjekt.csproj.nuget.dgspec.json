@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asim.jugo\\Source\\Repos\\PizzaProjekt\\PizzaProjekt\\PizzaProjekt.csproj": {}
+    "C:\\Users\\asim.jugo\\source\\repos\\PizzaProjekt\\PizzaProjekt\\PizzaProjekt.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asim.jugo\\Source\\Repos\\PizzaProjekt\\PizzaProjekt\\PizzaProjekt.csproj": {
+    "C:\\Users\\asim.jugo\\source\\repos\\PizzaProjekt\\PizzaProjekt\\PizzaProjekt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asim.jugo\\Source\\Repos\\PizzaProjekt\\PizzaProjekt\\PizzaProjekt.csproj",
+        "projectUniqueName": "C:\\Users\\asim.jugo\\source\\repos\\PizzaProjekt\\PizzaProjekt\\PizzaProjekt.csproj",
         "projectName": "PizzaProjekt",
-        "projectPath": "C:\\Users\\asim.jugo\\Source\\Repos\\PizzaProjekt\\PizzaProjekt\\PizzaProjekt.csproj",
+        "projectPath": "C:\\Users\\asim.jugo\\source\\repos\\PizzaProjekt\\PizzaProjekt\\PizzaProjekt.csproj",
         "packagesPath": "C:\\Users\\asim.jugo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asim.jugo\\Source\\Repos\\PizzaProjekt\\PizzaProjekt\\obj\\",
+        "outputPath": "C:\\Users\\asim.jugo\\source\\repos\\PizzaProjekt\\PizzaProjekt\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\asim.jugo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -21,7 +21,8 @@
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -38,6 +39,16 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Microsoft.VisualStudio.Web.BrowserLink": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
