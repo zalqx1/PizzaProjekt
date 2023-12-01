@@ -1,0 +1,12 @@
+﻿/*  styling for configurator */
+header .navbar {
+    padding: 20px 50px;
+}
+header .row {
+    width: 100%;
+}
+
+header .header__content {
+    display: flex;
+    justify-content: flex-end;
+}

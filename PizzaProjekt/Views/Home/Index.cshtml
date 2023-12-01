@@ -1,8 +1,63 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Konfigurator";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="configurator">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-4 configurator__sidebar sidebar">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="sidebar__base">
+
+                            <div class="col-12 col-md-6 sidebar__item">
+                                <p>NAPOLI</p>
+                            </div>
+
+                            <div class="col-12 col-md-6 sidebar__item">
+                                <p>ROMA</p>
+                            </div>
+
+                        </div>
+
+                        <div class="sidebar__meats">
+                            <div class="col-12 col-md-6 sidebar__item">
+                                <p>test</p>
+                            </div>
+                        </div>
+
+                        <div class="sidebar__vegetables">
+                            <div class="col-12 col-md-6 sidebar__item">
+                                <p>test</p>
+                            </div>
+                        </div>
+
+                        <div class="sidebar__cheese">
+                            <div class="col-12 col-md-6 sidebar__item">
+                                <p>test</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="col-12 col-lg-8 configurator__content">
+                <div class="configurator__image"></div>
+
+                <div class="configurator__background-yellow"></div>
+
+                <div class="configurator__fresco"></div>
+
+                <div class="configurator__price">
+                    <button class="configurator__price-button">
+                        11,90€
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
