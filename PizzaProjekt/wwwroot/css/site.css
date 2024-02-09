@@ -73,8 +73,65 @@ body {
     line-height: 60px; /* Vertically center the text there */
 }
 
+header .navbar {
+    padding: 20px 50px;
+    z-index: 2;
+}
+
+header .row {
+    width: 100%;
+}
+
+header .header__content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .header__image {
     height: 60px;
     display: flex;
     align-items: center;
+}
+
+header .header__cart {
+    color: #262626;
+    text-decoration: none;
+}
+
+    header .header__cart.cartAdded {
+        animation-name: example;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+    }
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    0% {
+        font-size: 16px;
+    }
+
+    80% {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    100% {
+        font-size: 16px;
+    }
+}
+
+.header__cart {
+    height: 26px;
+    display: flex;
+    gap: 0 0.5rem;
+}
+
+header .header__cart:hover {
+    font-weight: bold;
+}
+
+.header__cart svg {
+    height: 100%;
+    width: 20px;
 }

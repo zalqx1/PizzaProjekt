@@ -1,47 +1,6 @@
 ﻿/*  styling for configurator */
-header .navbar {
-    padding: 20px 50px;
-    z-index: 2;
-}
-header .row {
-    width: 100%;
-}
 
-header .header__content {
-    display: flex;
-    justify-content: flex-end;
-}
 
-header .header__cart {
-    color: #262626;
-    text-decoration: none;
-}
-
-header .header__cart.cartAdded {
-    animation-name: example;
-    animation-duration: 1s;
-    animation-fill-mode: forwards; 
-}
-
-/* Chrome, Safari, Opera */
-@-webkit-keyframes example {
-    0% {
-        font-size: 16px;
-    }
-
-    80% {
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    100% {
-        font-size: 16px;
-    }
-}
-
-    header .header__cart:hover {
-        font-weight: bold;
-    }
 
 
 @media (max-width: 991px) {

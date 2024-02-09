@@ -1,0 +1,199 @@
+/*  styling for checkout */
+
+@media (max-width: 991px) {
+    .checkout {
+        position: relative;
+    }
+}
+
+.checkout__sidebar {
+    height: 100vh;
+    overflow-y: auto;
+    background: lightgray;
+    padding: 1rem 2rem 8rem;
+}
+
+.checkout__title {
+    text-align: center;
+    padding: 1rem;
+}
+
+.checkout__content {
+    position: relative;
+    padding: 0 !important;
+    background-image: url(/Bilder/background.jpg);
+    height: 100vh;
+    overflow: scroll;
+    padding-bottom: 6rem !important;
+}
+
+.checkout__image-container {
+    height: 70vh;
+}
+
+
+.checkout__image {
+    position: relative;
+    height: 100%;
+}
+
+.checkout__price {
+    display: flex;
+    height: 20%;
+    justify-content: center;
+    position: fixed;
+    width: inherit;
+    background: lightgray;
+    padding: 2rem;
+    background: #f0f0f0b5;
+    backdrop-filter: blur(20px) saturate(1.7);
+    bottom: 0;
+    z-index: 5;
+}
+
+/* button */
+.checkout__price-button {
+    display: flex;
+    background: unset;
+    flex-direction: row;
+    border: none;
+    padding: 0;
+    height: 5rem;
+    color: black;
+    text-decoration: none;
+}
+
+    .checkout__price-button .button__text {
+        height: 100%;
+        margin: 0;
+        padding: .5rem 1rem;
+        background: #f3f3f3;
+        display: flex;
+        align-items: center;
+        width: 11rem;
+        justify-content: center;
+        font-size: 30px;
+        border: 1px solid #262626;
+        pointer-events: none;
+    }
+
+    .checkout__price-button:hover .button__checkout {
+        background: #16a016;
+    }
+
+        .checkout__price-button:hover .button__checkout svg {
+            fill: white;
+        }
+
+    .checkout__price-button .button__checkout {
+        overflow: hidden;
+        position: relative;
+        width: 6rem;
+        height: 100%;
+        background: #12d612;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+    }
+
+        .checkout__price-button .button__checkout svg {
+            position: absolute;
+            right: 30%;
+            width: 50px;
+            height: 100%;
+        }
+
+/* MOBILE VIEW*/
+@media (max-width: 991px) {
+    .checkout {
+        position: relative;
+    }
+
+    .checkout__sidebar {
+        position: absolute;
+        width: 30%;
+        overflow-y: scroll;
+        z-index: 2;
+    }
+
+    .checkout__content {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .checkout__image-container {
+        width: 70%;
+    }
+
+    .checkout__image {
+        width: 100%;
+    }
+
+    .checkout__price {
+        bottom: 0;
+        width: 70%;
+    }
+}
+
+.checkout__order--container {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.contact-details,
+.cart-overview {
+    margin: 2rem 4rem;
+    background: #cacaca5c;
+    padding: 2rem 4rem;
+    backdrop-filter: blur(20px) saturate(1.3);
+    border-radius: 60px;
+}
+
+.contact__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.contact__headline {
+    margin: 0;
+    width: 20%;
+    min-width: 200px;
+    font-family: fantasy;
+}
+
+.contact__input {
+    min-width: 300px;
+}
+
+.checkout__button--container {
+    display: flex;
+    justify-content: center;
+}
+.checkout__button {
+    display: flex;
+    background: green;
+    border: unset;
+    border-radius: 30px;
+    padding: 0.5rem 2rem;
+    color: white;
+    gap: 0 0.5rem;
+    align-items: center;
+}
+
+.button__text {
+    margin: 0;
+}
+
+.button__cart {
+    width: 30px;
+    height: 30px;
+}
+.button__cart svg {
+    width: 100%;
+    height: 100%;
+}
