@@ -16,13 +16,13 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-3">
-                        <a class="header__logo">Pizzeria Della Nonna</a>
+                        <a href="/" class="header__item header__logo">
+                            <img class="header__image" src="Bilder/headerLogo.png" />
+                        </a>
                     </div>
 
                     <div class="col-9 header__content">
-                        <a href="/cart" class="header__cart">
-                            Warenkorb
-                        </a>
+                        <a class="header__item header__cart" asp-controller="Home" asp-action="Cart">Cart</a>
                     </div>
                 </div>
 

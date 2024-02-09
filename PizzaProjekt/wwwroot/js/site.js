@@ -21,14 +21,27 @@ items.forEach(item => {
 const PriceButton = document.querySelector(".configurator__price-button");
 
 PriceButton.addEventListener("click", function () {
-    PriceButton.querySelector("svg").classList.add("berg");
-    
-    const addCart = async () => {
-        await setTimeout(7000);
-        console.log("Waited 7s");
+    alert("Ihre Bestellung wurde zum Warenkorb hinzugefügt.")
+})
 
-        const Cart = document.querySelector("header .header__cart");
-        Cart.classList.add("cartAdded");
-    };
-    addCart();
+const Items = document.querySelectorAll(".sidebar__item");
+Items.forEach(item => {
+
+
+    item.addEventListener("click", function () {
+        const itemName = item.getAttribute("name");
+        const img = document.querySelector(`.configurator__toppings img[name="${itemName}"]`);
+        const option = document.querySelector(`.sidebar__item[name="${itemName}"]`)
+
+        console.log(itemName)
+        console.log(img)
+        console.log(option)
+        if (option.classList.contains("active")) {
+            console.log("if")
+            img.classList.add("item__visible");
+        } else {
+            console.log("else")
+            img.classList.remove("item__visible");
+        }
+    })
 })

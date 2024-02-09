@@ -54,7 +54,7 @@ header .header__cart.cartAdded {
     height: 100vh;
     overflow-y: auto;
     background: lightgray;
-    padding: 5rem 2rem;
+    padding: 1rem 2rem 8rem;
 }
 
 @media (max-width: 991px) {
@@ -97,9 +97,9 @@ header .header__cart.cartAdded {
             background-color: #DC3E3E;
         }
 
-            .sidebar__item.active:hover {
-                border-inline: 7px solid #262626;
-            }
+        .sidebar__item.active:hover {
+            border-inline: 7px solid #262626;
+        }
 
         .sidebar__item p {
             margin: 0;
@@ -230,10 +230,15 @@ header .header__cart.cartAdded {
 }
 
 .configurator__toppings img {
+    display: none;
     position: absolute;
     width: 50%;
     object-fit: cover;
     height: 70vh;
+}
+
+.item__visible {
+    display: block !important;
 }
 
     @keyframes scaleUp {
@@ -282,6 +287,7 @@ header .header__cart.cartAdded {
     background: #f0f0f0b5;
     backdrop-filter: blur(20px) saturate(1.7);
     bottom: 0;
+    z-index: 5;
 }
 
     /* button */
@@ -294,80 +300,87 @@ header .header__cart.cartAdded {
         height: 5rem;
     }
 
-        .configurator__price-button .button__text {
-            margin: 0;
-            padding: .5rem 1rem;
-            background: #f3f3f3;
-            display: flex;
-            align-items: center;
-            width: 11rem;
-            justify-content: center;
-            font-size: 30px;
-            border: 1px solid #262626;
-            pointer-events: none;
-        }
+.configurator__price-button .button__text {
+    height: 100%;
+    margin: 0;
+    padding: .5rem 1rem;
+    background: #f3f3f3;
+    display: flex;
+    align-items: center;
+    width: 11rem;
+    justify-content: center;
+    font-size: 30px;
+    border: 1px solid #262626;
+    pointer-events: none;
+}
 
-        .configurator__price-button .button__cart {
-            width: 6rem;
-            background: #12d612;
-            border-top-right-radius: 50px;
-            border-bottom-right-radius: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            pointer-events: none;
-        }
+.configurator__price-button:hover .button__cart {
+    background: #16a016;
+}
 
-            .configurator__price-button .button__cart svg {
-                width: 50px;
-                height: 50px;
-                position: fixed;
-                /*color: white;*/
-                transition: 7s;
-                top: 87%;
-                right: 26%;
-                transform: rotate(360deg);
-            }
+.configurator__price-button:hover .button__cart svg {
+    fill: white;
+}
 
-        .configurator__price-button svg.berg {
-            position: fixed;
-            top: 2rem;
-            width: 20px;
-            height: 20px;
-            color: black;
-            right: 10%;
-            transition: 7s;
-            transform: rotate(-20deg);
-        }
+.configurator__price-button .button__cart {
+    overflow: hidden;
+    position: relative;
+    width: 6rem;
+    height: 100%;
+    background: #12d612;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+    .configurator__price-button .button__cart svg {
+        position: absolute;
+        right: 30%;
+        width: 50px;
+        height: 100%;
+    }
+
+@keyframes moveOut {
+    0% {
+        right: 30%;
+    }
+
+    100% {
+        right: -50%;
+    }
+}
 
     /* MOBILE VIEW*/
-    @media (max-width: 991px) {
-        .configurator {
-            position: relative;
-        }
+            @media (max-width: 991px) {
+                .configurator {
+                    position: relative;
+                }
 
-        .configurator__sidebar {
-            position: absolute;
-            width: 30%;
-            overflow-y: scroll;
-            z-index: 2;
-        }
+                .configurator__sidebar {
+                    position: absolute;
+                    width: 30%;
+                    overflow-y: scroll;
+                    z-index: 2;
+                }
 
-        .configurator__content {
-            display: flex;
-            justify-content: flex-end;
-        }
+                .configurator__content {
+                    display: flex;
+                    justify-content: flex-end;
+                }
 
-        .configurator__image-container {
-            width: 70%;
-        }
+                .configurator__image-container {
+                    width: 70%;
+                }
 
-        .configurator__image {
-            width: 100%;
-        }
+                .configurator__image {
+                    width: 100%;
+                }
 
-        .configurator__price {
-            bottom: 0;
-            width: 70%;
-        }
-    }
+                .configurator__price {
+                    bottom: 0;
+                    width: 70%;
+                }
+            }

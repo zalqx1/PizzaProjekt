@@ -9,28 +9,20 @@
                 <div class="container">
                     <div class="row">
 
-                        <div class="sidebar__section sidebar__base">
-                            <div class="col-12 sidebar__headline">BASE</div>
-
-                            <div class="col-12 col-lg-6 sidebar__item-col">
-                                <p class="sidebar__item" name="main_napoli">NAPOLI</p>
-                            </div>
-
-                            <div class="col-12 col-lg-6 sidebar__item-col">
-                                <p class="sidebar__item" name="main_roma">ROMA</p>
-                            </div>
-
-                        </div>
+                        
 
                         <div class="sidebar__section sidebar__meats">
                             <div class="col-12 sidebar__headline">MEATS</div>
 
                             <div class="col-12 col-lg-6 sidebar__item-col">
-                                <p class="sidebar__item" name="meat_salami">Salami</p>
+                                <p class="sidebar__item" name="salami">Salami</p>
                             </div>
 
                             <div class="col-12 col-lg-6 sidebar__item-col">
-                                <p class="sidebar__item" name="meat_sucuk">Sucuk</p>
+                                <p class="sidebar__item" name="sucuk">Sucuk</p>
+                            </div>
+                            <div class="col-12 col-lg-6 sidebar__item-col">
+                                <p class="sidebar__item" name="ham">Schinken</p>
                             </div>
                         </div>
 
@@ -38,10 +30,13 @@
                             <div class="col-12 sidebar__headline">VEGETABLES</div>
 
                             <div class="col-12 col-lg-6 sidebar__item-col">
-                                <p class="sidebar__item" name="meat_pepperoni">Pepperoni</p>
+                                <p class="sidebar__item" name="pepperoni">Pepperoni</p>
                             </div>
                             <div class="col-12 col-lg-6 sidebar__item-col">
-                                <p class="sidebar__item">test</p>
+                                <p class="sidebar__item" name="tomatoes">Tomaten</p>
+                            </div>
+                            <div class="col-12 col-lg-6 sidebar__item-col">
+                                <p class="sidebar__item" name="olives">Oliven</p>
                             </div>
                         </div>
 
@@ -55,7 +50,7 @@
                                 <p class="sidebar__item" name="cheese_goat">Schafskäse</p>
                             </div>
                             <div class="col-12 col-lg-6 sidebar__item-col">
-                                <p class="sidebar__item" name="cheese_test">test</p>
+                                <p class="sidebar__item" name="cheese_parmesan">Parmesan</p>
                             </div>
                         </div>
 
@@ -71,11 +66,15 @@
                             <img class="pizza_base" src="Bilder/PizzaMockup.png" />
 
                             <div class="configurator__toppings">
-                                <img name="cheese_goat" src="Bilder/cheese_goat.png" />
-                                <img name="cheese_main" src="Bilder/cheese_main.png" />
-                                <img name="pepperoni" src="Bilder/pepperoni.png" />
+                                <img name="ham" src="Bilder/ham.png" />
                                 <img name="salami" src="Bilder/salami.png" />
+                                <img name="tomatoes" src="Bilder/tomatoes.png" />
                                 <img name="sucuk" src="Bilder/sucuk.png" />
+                                <img name="pepperoni" src="Bilder/pepperoni.png" />
+                                <img name="olives" src="Bilder/olives.png" />
+                                <img name="cheese_main" src="Bilder/cheese_main.png" />
+                                <img name="cheese_goat" src="Bilder/cheese_goat.png" />
+                                <img name="cheese_parmesan" src="Bilder/cheese_parmesan.png" />
                             </div>
                             
                         </div>
@@ -88,12 +87,9 @@
                             <img class="scaleUp" src="Bilder/Fresco.png" />
                         </div>
                     </div>
-
-                    
-
-                    
                 </div>
                 
+                <partial name="/Pages/CartInformation.cshtml" />
 
                 <div class="configurator__price">
                     <button class="configurator__price-button">

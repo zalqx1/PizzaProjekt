@@ -1102,19 +1102,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\asim.jugo\\.nuget\\packages\\": {}
+    "C:\\Users\\colin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\asim.jugo\\source\\repos\\PizzaProjekt\\PizzaProjekt\\PizzaProjekt.csproj",
+      "projectUniqueName": "C:\\Users\\colin\\source\\repos\\PizzaProjekt2\\PizzaProjekt\\PizzaProjekt.csproj",
       "projectName": "PizzaProjekt",
-      "projectPath": "C:\\Users\\asim.jugo\\source\\repos\\PizzaProjekt\\PizzaProjekt\\PizzaProjekt.csproj",
-      "packagesPath": "C:\\Users\\asim.jugo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\asim.jugo\\source\\repos\\PizzaProjekt\\PizzaProjekt\\obj\\",
+      "projectPath": "C:\\Users\\colin\\source\\repos\\PizzaProjekt2\\PizzaProjekt\\PizzaProjekt.csproj",
+      "packagesPath": "C:\\Users\\colin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\colin\\source\\repos\\PizzaProjekt2\\PizzaProjekt\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\asim.jugo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\colin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1167,7 +1167,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
