@@ -8,7 +8,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using PizzaProjekt.Repositories;
-using PizzaProjekt.Extensions;
 
 namespace PizzaProjekt.Controllers
 {
@@ -16,32 +15,18 @@ namespace PizzaProjekt.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IngredientsRepository _ingredientsRepository;
-        private readonly CartService _cartService;
 
 
-        public HomeController(ILogger<HomeController> logger, IngredientsRepository ingredientsRepository, CartService cartService)
+        public HomeController(ILogger<HomeController> logger, IngredientsRepository ingredientsRepository)
         {
             _logger = logger;
             _ingredientsRepository = ingredientsRepository;
-            _cartService = cartService;
         }
 
         public IActionResult Index()
         {
             var ingredients = _ingredientsRepository.GetAllIngredients();
             return View(ingredients);
-        }
-
-        [HttpPost]
-        public IActionResult addToCart()
-        {
-            var formData = HttpContext.Request.Form;
-
-            var selectedItems = _cartService.ProcessCart(formData);
-
-            HttpContext.Session.Set("Cart", selectedItems);
-
-            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult Privacy()
