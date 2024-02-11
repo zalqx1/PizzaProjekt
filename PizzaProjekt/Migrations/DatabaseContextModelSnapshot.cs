@@ -136,50 +136,6 @@ namespace PizzaProjekt.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("PizzaProjekt.Models.Pizza", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("name")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Pizza");
-
-                    b.HasData(
-                        new
-                        {
-                            id = 1,
-                            name = "Pizza Napoli"
-                        },
-                        new
-                        {
-                            id = 2,
-                            name = "Pizza Roma"
-                        });
-                });
-
-            modelBuilder.Entity("PizzaProjekt.Models.PizzaOrders", b =>
-                {
-                    b.Property<int>("PizzaId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OrdersId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("id")
-                        .HasColumnType("int");
-
-                    b.HasKey("PizzaId", "OrdersId");
-
-                    b.HasIndex("OrdersId");
-
-                    b.ToTable("PizzaOrders");
-                });
-
             modelBuilder.Entity("PizzaProjekt.Models.IngredientsOrders", b =>
                 {
                     b.HasOne("PizzaProjekt.Models.Ingredients", "Ingredients")
@@ -191,21 +147,6 @@ namespace PizzaProjekt.Migrations
                     b.HasOne("PizzaProjekt.Models.Orders", "Orders")
                         .WithMany("IngredientsOrders")
                         .HasForeignKey("OrdersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("PizzaProjekt.Models.PizzaOrders", b =>
-                {
-                    b.HasOne("PizzaProjekt.Models.Orders", "Orders")
-                        .WithMany("PizzaOrders")
-                        .HasForeignKey("OrdersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("PizzaProjekt.Models.Pizza", "Pizza")
-                        .WithMany("PizzaOrders")
-                        .HasForeignKey("PizzaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

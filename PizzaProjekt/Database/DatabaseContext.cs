@@ -13,28 +13,12 @@ namespace PizzaProjekt.Database
         {
         }
 
-        public DbSet<Pizza> Pizza { get; set; }
         public DbSet<Ingredients> Ingredients { get; set; }
         public DbSet<Orders> Orders { get; set; }
-        public DbSet<PizzaOrders> PizzaOrders { get; set; }
         public DbSet<IngredientsOrders> IngredientsOrders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // MM for pizza and orders
-            modelBuilder.Entity<PizzaOrders>()
-                .HasKey(sc => new { sc.PizzaId, sc.OrdersId });
-
-            modelBuilder.Entity<PizzaOrders>()
-                .HasOne(sc => sc.Pizza)
-                .WithMany(s => s.PizzaOrders)
-                .HasForeignKey(sc => sc.PizzaId);
-
-            modelBuilder.Entity<PizzaOrders>()
-                .HasOne(sc => sc.Orders)
-                .WithMany(c => c.PizzaOrders)
-                .HasForeignKey(sc => sc.OrdersId);
-
             // MM for ingredients and orders
             modelBuilder.Entity<IngredientsOrders>()
                 .HasKey(sc => new { sc.IngredientsId, sc.OrdersId });
@@ -66,11 +50,6 @@ namespace PizzaProjekt.Database
                 new Ingredients { id = 7, name = "Mozzarella", gruppe = "Cheese" },
                 new Ingredients { id = 8, name = "Schafskäse", gruppe = "Cheese" },
                 new Ingredients { id = 9, name = "Parmesan", gruppe = "Cheese" }
-            );
-
-            modelBuilder.Entity<Pizza>().HasData(
-                new Pizza { id = 1, name = "Pizza Napoli" },
-                new Pizza { id = 2, name = "Pizza Roma" }
             );
         }
 
