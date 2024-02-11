@@ -8,8 +8,8 @@ using PizzaProjekt.Database;
 namespace PizzaProjekt.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20240210030631_AddIdentityToStudent")]
-    partial class AddIdentityToStudent
+    [Migration("20240210030631_AddGroupToIngredients")]
+    partial class AddGroupToIngredients
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
