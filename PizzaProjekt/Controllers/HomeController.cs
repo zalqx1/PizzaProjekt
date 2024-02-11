@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using PizzaProjekt.Repositories;
+using PizzaProjekt.Extensions;
 
 namespace PizzaProjekt.Controllers
 {
@@ -36,22 +37,14 @@ namespace PizzaProjekt.Controllers
         {
             var formData = HttpContext.Request.Form;
 
-            _cartService.ProcessCart(formData);
+            var selectedItems = _cartService.ProcessCart(formData);
+
+            HttpContext.Session.Set("Cart", selectedItems);
 
             return RedirectToAction("Index", "Home");
         }
 
         public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        public IActionResult Cart()
-        {
-            return View();
-        } 
-        
-        public IActionResult Checkout()
         {
             return View();
         }

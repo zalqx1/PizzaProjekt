@@ -8,7 +8,7 @@ namespace PizzaProjekt.Services
 {
     public class CartService
     {
-        public void ProcessCart(IFormCollection formData)
+        public List<string> ProcessCart(IFormCollection formData)
         {
             var selectedItems = new List<string>();
 
@@ -21,6 +21,8 @@ namespace PizzaProjekt.Services
                     selectedItems.Add(key);
                 }
             }
+
+            return selectedItems;
         }
     }
 }
