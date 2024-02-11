@@ -15,24 +15,38 @@ namespace PizzaProjekt.Database
 
         public DbSet<Ingredients> Ingredients { get; set; }
         public DbSet<Orders> Orders { get; set; }
-        public DbSet<IngredientsOrders> IngredientsOrders { get; set; }
+        public DbSet<Pizza> Pizza { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // MM for ingredients and orders
-            modelBuilder.Entity<IngredientsOrders>()
-                .HasKey(sc => new { sc.IngredientsId, sc.OrdersId });
+            // MM for ingredients and pizza
+            modelBuilder.Entity<PizzaIngredients>()
+                .HasKey(pi => new { pi.PizzaId, pi.IngredientsId });
 
-            modelBuilder.Entity<IngredientsOrders>()
-                .HasOne(sc => sc.Ingredients)
-                .WithMany(s => s.IngredientsOrders)
-                .HasForeignKey(sc => sc.OrdersId);
+            modelBuilder.Entity<PizzaIngredients>()
+                .HasOne(pi => pi.Pizza)
+                .WithMany(p => p.PizzaIngredients)
+                .HasForeignKey(pi => pi.PizzaId);
 
-            modelBuilder.Entity<IngredientsOrders>()
-                .HasOne(sc => sc.Orders)
-                .WithMany(c => c.IngredientsOrders)
-                .HasForeignKey(sc => sc.OrdersId);
-            
+            modelBuilder.Entity<PizzaIngredients>()
+                .HasOne(pi => pi.Ingredients)
+                .WithMany(i => i.PizzaIngredients)
+                .HasForeignKey(pi => pi.IngredientsId);
+
+            // MM for orders and pizza
+            modelBuilder.Entity<OrdersPizza>()
+                .HasKey(pi => new { pi.OrdersId, pi.PizzaId });
+
+            modelBuilder.Entity<OrdersPizza>()
+                .HasOne(pi => pi.Orders)
+                .WithMany(p => p.OrdersPizza)
+                .HasForeignKey(pi => pi.OrdersId);
+
+            modelBuilder.Entity<OrdersPizza>()
+                .HasOne(pi => pi.Pizza)
+                .WithMany(i => i.OrdersPizza)
+                .HasForeignKey(pi => pi.PizzaId);
+
             SeedData(modelBuilder);
         }
 

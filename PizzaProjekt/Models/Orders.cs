@@ -21,6 +21,6 @@ namespace PizzaProjekt.Models
         
         public string nachname{ get; set; }
 
-        public ICollection<IngredientsOrders> IngredientsOrders { get; set; }
+        public List<OrdersPizza> OrdersPizza { get; set; } = new List<OrdersPizza>();
     }
 }
