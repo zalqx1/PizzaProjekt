@@ -20,5 +20,8 @@ namespace PizzaProjekt.Models
         public string name{ get; set; }
         
         public string nachname{ get; set; }
+
+        public ICollection<PizzaOrders> PizzaOrders { get; set; }
+        public ICollection<IngredientsOrders> IngredientsOrders { get; set; }
     }
 }

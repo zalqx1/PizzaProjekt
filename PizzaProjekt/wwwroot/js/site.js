@@ -7,7 +7,6 @@
 const items = document.querySelectorAll(".sidebar__item");
 
 items.forEach(item => {
-    console.log(item);
     item.addEventListener('click', function () {
         
         if (this.classList.contains("active")) {
@@ -32,6 +31,9 @@ Items.forEach(item => {
         const itemName = item.getAttribute("name");
         const img = document.querySelector(`.configurator__toppings img[name="${itemName}"]`);
         const option = document.querySelector(`.sidebar__item[name="${itemName}"]`)
+
+        var hiddenInput = document.querySelector(`#${itemName}Input`);
+        hiddenInput.value = (hiddenInput.value === "true") ? "false" : "true";
 
         if (option.classList.contains("active")) {
             img.classList.add("item__visible");
