@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\PizzaProjekt",
-    "\\PizzaProjekt\\Views\\Home",
-    "\\PizzaProjekt\\Views\\Shared"
+    "\\PizzaProjekt"
   ],
-  "SelectedNode": "\\PizzaProjekt\\PizzaProjekt.csproj",
   "PreviewInSolutionExplorer": false
 }
