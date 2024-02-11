@@ -80,6 +80,10 @@ namespace PizzaProjekt
                 endpoints.MapControllerRoute(
                     name: "cart",
                     pattern: "{controller=Cart}/{action=Index}/");
+                
+                endpoints.MapControllerRoute(
+                    name: "deleteCartItem",
+                    pattern: "{controller=Cart}/{action=DeleteCartItem}/{index}");
             });
         }
     }

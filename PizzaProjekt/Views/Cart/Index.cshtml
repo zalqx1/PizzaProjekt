@@ -1,4 +1,4 @@
-@model List<string>
+@model List<Pizza>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,27 +28,33 @@
             <div class="col-12 col-lg-8 cart__content">
                 <div class="cart__order--container">
 
-                    @if (Model != null)
+                    @if (Model.Count != 0)
                     {
-                        <ul class="order__item">
-                            <h3 class="order__number">Pizza #{item.count +1}</h3>
-                            <div class="col-12 col-lg-6 order__image--container">
-                                <img class="order__image" src="~/Bilder/pizzabox.png" />
-                            </div>
-                        
-                            <div class="col-12 col-lg-6 order__content--container">
-                                    @foreach (var item in Model)
+                        @foreach (var item in Model)
+                        {
+                            <ul class="order__item">
+                                <h3 class="order__number">Pizza @(Model.IndexOf(item) + 1)</h3>
+                                <div class="col-12 col-lg-6 order__image--container">
+                                    <img class="order__image" src="~/Bilder/pizzabox.png" />
+                                </div>
+
+                                <div class="col-12 col-lg-6 order__content--container">
+
+                                    @foreach (var pizzaIngredient in item.PizzaIngredients)
                                     {
-                                        <li class="order__ingredient">@item</li>
+                                        <li class="order__ingredient">@pizzaIngredient.Ingredients.name</li>
                                     }
-                            </div>
-                        </ul>
+                                </div>
+                                <a class="cart__delete-button" asp-controller="Cart" asp-action="DeleteCartItem" asp-route-index="@(Model.IndexOf(item))">Löschen</a>
+
+                            </ul>
+                            }
                     }
                     else
                     {
                         <p>Keine Pizza. Was ist falsch mit dir?????</p>
                     }
-                </div>
+            </div>
                 <div class="cart__price">
                     <a class="cart__price-button" asp-controller="Cart" asp-action="Checkout">
                         <p class="button__text">11,90 �</p>
@@ -64,6 +70,6 @@
             </div>
         </div>
     </div>
-</div>
+    </div>
 
 

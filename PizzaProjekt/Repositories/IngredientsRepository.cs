@@ -15,9 +15,15 @@ namespace PizzaProjekt.Repositories
             _context = context;
         }
 
-        public List<Ingredients> GetAllIngredients()
+        public List<Ingredients> GetAll()
         {
             return _context.Ingredients.ToList();
+        }
+        public List<Ingredients> GetIngredientsByIds(List<int> ingredientIds)
+        {
+            return _context.Ingredients
+                .Where(i => ingredientIds.Contains(i.id))
+                .ToList();
         }
     }
 }

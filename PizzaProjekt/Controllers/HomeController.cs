@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using PizzaProjekt.Repositories;
+using PizzaProjekt.ViewModels;
 
 namespace PizzaProjekt.Controllers
 {
@@ -25,8 +26,16 @@ namespace PizzaProjekt.Controllers
 
         public IActionResult Index()
         {
-            var ingredients = _ingredientsRepository.GetAllIngredients();
-            return View(ingredients);
+            List<Ingredients> availableIngredients = _ingredientsRepository.GetAll();
+            var viewModel = new ConfiguratorFormViewModel
+            {
+                AvailableIngredients = availableIngredients,
+                GroupedIngredients = availableIngredients
+                    .GroupBy(ingredient => ingredient.gruppe)
+                    .ToDictionary(group => group.Key, group => group.ToList())
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult Privacy()

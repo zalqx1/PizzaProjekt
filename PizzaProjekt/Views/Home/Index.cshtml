@@ -1,11 +1,7 @@
-﻿@model List<Ingredients>
+﻿@model PizzaProjekt.ViewModels.ConfiguratorFormViewModel
 @{
     ViewData["Title"] = "Konfigurator";
-
-    var groupedIngredients = Model.GroupBy(i => i.gruppe);
 }
-
-
 
 <form method="post" action="@Url.Action("addToCart", "Cart")">
     <div class="configurator">
@@ -14,16 +10,16 @@
                 <div class="col-12 col-lg-4 configurator__sidebar sidebar">
                     <div class="container">
                         <div class="row">
-                            @foreach (var group in groupedIngredients)
+                            @foreach (var group in Model.GroupedIngredients)
                             {
                                 <div class="sidebar__section sidebar__@group.Key.ToLower()">
                                     <div class="col-12 sidebar__headline">@group.Key</div>
 
-                                    @foreach (var ingredient in group)
+                                    @foreach (var ingredient in group.Value)
                                     {
                                         <div class="col-12 col-lg-6 sidebar__item-col">
                                             <p class="sidebar__item" name="@ingredient.name.ToLower()">@ingredient.name</p>
-                                            <input type="hidden" id="@ingredient.name.ToLower()Input" name="@ingredient.name.ToLower()" value="false">
+                                            <input type="checkbox" name="SelectedIngredientIds" value="@ingredient.id">
                                         </div>
                                     }
                                 </div>

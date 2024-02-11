@@ -26,8 +26,6 @@ Items.forEach(item => {
         const img = document.querySelector(`.configurator__toppings img[name="${itemName}"]`);
         const option = document.querySelector(`.sidebar__item[name="${itemName}"]`)
 
-        var hiddenInput = document.querySelector(`#${itemName}Input`);
-        hiddenInput.value = (hiddenInput.value === "true") ? "false" : "true";
         console.log(option)
         if (option.classList.contains("active")) {
             console.log(img)
