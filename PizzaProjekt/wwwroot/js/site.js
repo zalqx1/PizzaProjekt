@@ -17,12 +17,6 @@ items.forEach(item => {
     })
 })
 
-const PriceButton = document.querySelector(".configurator__price-button");
-
-PriceButton.addEventListener("click", function () {
-    alert("Ihre Bestellung wurde zum Warenkorb hinzugefügt.")
-})
-
 const Items = document.querySelectorAll(".sidebar__item");
 Items.forEach(item => {
 
@@ -34,10 +28,12 @@ Items.forEach(item => {
 
         var hiddenInput = document.querySelector(`#${itemName}Input`);
         hiddenInput.value = (hiddenInput.value === "true") ? "false" : "true";
-
+        console.log(option)
         if (option.classList.contains("active")) {
+            console.log(img)
             img.classList.add("item__visible");
         } else {
+            console.log(img)
             img.classList.remove("item__visible");
         }
     })
