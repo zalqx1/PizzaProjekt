@@ -22,12 +22,14 @@ Items.forEach(item => {
 
 
     item.addEventListener("click", function () {
-        const itemName = item.getAttribute("name");
+        const itemName = item.querySelector("label").getAttribute("name");
         const img = document.querySelector(`.configurator__toppings img[name="${itemName}"]`);
-        const option = document.querySelector(`.sidebar__item[name="${itemName}"]`)
-
+        const option = document.querySelector(`.sidebar__item label[name="${itemName}"]`)
+        console.log(itemName)
+        console.log(img)
         console.log(option)
-        if (option.classList.contains("active")) {
+        console.log(option)
+        if (option.parentElement.classList.contains("active")) {
             console.log(img)
             img.classList.add("item__visible");
         } else {

@@ -26,64 +26,72 @@
     }
 }
 
-    .sidebar__section {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 1rem 0;
-    }
+.sidebar__item-col {
+    margin: 1rem 0;
+}
 
-    .sidebar__headline {
-        margin-bottom: 1rem;
-        font-weight: bold;
-        font-size: 22px;
-        font-style: italic;
-    }
+.sidebar__section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+}
 
-    .sidebar__item {
-        background: #262626;
-        color: #f3f3f3;
-        text-align: center;
-        border-radius: 60px;
-        padding: 1rem;
-    }
+.sidebar__headline {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 22px;
+    font-style: italic;
+}
 
-        .sidebar__item:hover {
-            border-inline: 7px solid #DC3E3E;
-        }
+.sidebar__item {
+    background: #262626;
+    color: #f3f3f3;
+    text-align: center;
+    border-radius: 60px;
+    padding: 1rem;
+ }
 
-        .sidebar__item.active {
-            background-color: #DC3E3E;
-        }
+.sidebar__item input {
+    visibility: hidden;
+}
 
-        .sidebar__item.active:hover {
-            border-inline: 7px solid #262626;
-        }
+.sidebar__item:hover {
+    border-inline: 7px solid #DC3E3E;
+}
 
-        .sidebar__item p {
-            margin: 0;
-        }
+.sidebar__item.active {
+    background-color: #DC3E3E;
+}
 
-    .configurator__content {
-        position: relative;
-        padding: 0 !important;
-        background-image: url(/Bilder/background.jpg);
-        /*z-index: -1;*/
-    }
+.sidebar__item.active:hover {
+    border-inline: 7px solid #262626;
+}
 
-    .configurator__image-container {
-        height: 70vh;
-    }
+.sidebar__item p {
+    margin: 0;
+}
+
+.configurator__content {
+    position: relative;
+    padding: 0 !important;
+    background-image: url(/Bilder/background.jpg);
+    /*z-index: -1;*/
+}
+
+.configurator__image-container {
+    height: 70vh;
+}
 
 
-    .configurator__image {
-        position: relative;
-        height: 100%;
-    }
+.configurator__image {
+    position: relative;
+    height: 100%;
+}
 
-    .pizza_base {
-        position: relative;
-        height: 100%;
-    }
+.pizza_base {
+    position: relative;
+    height: 100%;
+}
 
 .configurator__pizza {
     height: 100%;
@@ -100,75 +108,75 @@
     height: 70vh;
 }
 
-       /*.configurator__image img {
-            height: 100%;
-            width: 100%;
-            object-fit: contain;
-            z-index: 2;
-            position: relative;
-        }*/ 
-
-    .configurator__background-yellow {
-        position: absolute;
-        top: 0;
-        z-index: 1;
-        width: 100%;
+    /*.configurator__image img {
         height: 100%;
-        overflow: hidden;
-    }
-
-        .configurator__background-yellow img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-    @-webkit-keyframes rotating /* Safari and Chrome */ {
-        from {
-            -webkit-transform: rotate(0deg);
-            -o-transform: rotate(0deg);
-            transform: rotate(0deg);
-        }
-
-        to {
-            -webkit-transform: rotate(360deg);
-            -o-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes rotating {
-        from {
-            -ms-transform: rotate(0deg);
-            -moz-transform: rotate(0deg);
-            -webkit-transform: rotate(0deg);
-            -o-transform: rotate(0deg);
-            transform: rotate(0deg);
-        }
-
-        to {
-            -ms-transform: rotate(360deg);
-            -moz-transform: rotate(360deg);
-            -webkit-transform: rotate(360deg);
-            -o-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-    }
-
-    .rotating {
-        -webkit-animation: rotating 17s linear infinite;
-        -moz-animation: rotating 17s linear infinite;
-        -ms-animation: rotating 17s linear infinite;
-        -o-animation: rotating 17s linear infinite;
-        animation: rotating 17s linear infinite;
-    }
-
-    .configurator__fresco {
-        position: absolute;
         width: 100%;
-        top: 0;
-        height: 100%;
+        object-fit: contain;
+        z-index: 2;
+        position: relative;
+    }*/ 
+
+.configurator__background-yellow {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.configurator__background-yellow img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating {
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    -webkit-animation: rotating 17s linear infinite;
+    -moz-animation: rotating 17s linear infinite;
+    -ms-animation: rotating 17s linear infinite;
+    -o-animation: rotating 17s linear infinite;
+    animation: rotating 17s linear infinite;
+}
+
+.configurator__fresco {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 100%;
+}
 
 .configurator__fresco img {
     width: 30%;

@@ -18,8 +18,10 @@
                                     @foreach (var ingredient in group.Value)
                                     {
                                         <div class="col-12 col-lg-6 sidebar__item-col">
-                                            <p class="sidebar__item" name="@ingredient.name.ToLower()">@ingredient.name</p>
-                                            <input type="checkbox" name="SelectedIngredientIds" value="@ingredient.id">
+                                            <div class="sidebar__item">
+                                                <label class="sidebar__label" name="@ingredient.name.ToLower()">@ingredient.name</label>
+                                                <input type="checkbox" name="SelectedIngredientIds" value="@ingredient.id">
+                                            </div>
                                         </div>
                                     }
                                 </div>
