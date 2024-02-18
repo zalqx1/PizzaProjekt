@@ -8,7 +8,6 @@ using PizzaProjekt.Services;
 using PizzaProjekt.ViewModels;
 using PizzaProjekt.Models;
 using PizzaProjekt.Repositories;
-using PizzaProjekt.Database;
 
 namespace PizzaProjekt.Controllers
 {
@@ -17,7 +16,7 @@ namespace PizzaProjekt.Controllers
         private readonly CartService _cartService;
         private readonly IngredientsRepository _ingredientsRepository;
 
-        public CartController(CartService cartService, IngredientsRepository ingredientsRepository, DatabaseContext dbContext)
+        public CartController(CartService cartService, IngredientsRepository ingredientsRepository)
         {
             _cartService = cartService;
             _ingredientsRepository = ingredientsRepository;
