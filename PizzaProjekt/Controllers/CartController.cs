@@ -8,6 +8,7 @@ using PizzaProjekt.Services;
 using PizzaProjekt.ViewModels;
 using PizzaProjekt.Models;
 using PizzaProjekt.Repositories;
+using PizzaProjekt.Database;
 
 namespace PizzaProjekt.Controllers
 {
@@ -16,7 +17,7 @@ namespace PizzaProjekt.Controllers
         private readonly CartService _cartService;
         private readonly IngredientsRepository _ingredientsRepository;
 
-        public CartController(CartService cartService, IngredientsRepository ingredientsRepository)
+        public CartController(CartService cartService, IngredientsRepository ingredientsRepository, DatabaseContext dbContext)
         {
             _cartService = cartService;
             _ingredientsRepository = ingredientsRepository;
@@ -29,7 +30,7 @@ namespace PizzaProjekt.Controllers
         }
 
         [HttpPost]
-        public IActionResult addToCart(ConfiguratorFormViewModel viewModel)
+        public IActionResult AddToCart(ConfiguratorFormViewModel viewModel)
         {
             var selectedIngredientIds = viewModel.SelectedIngredientIds;
 
@@ -77,6 +78,19 @@ namespace PizzaProjekt.Controllers
         public IActionResult Checkout()
         {
             return View();
+        }
+
+        public IActionResult Order(CheckoutFormViewModel viewModel)
+        {
+            // Get CartItems form Session
+            List<Pizza> cartItems = HttpContext.Session.Get<List<Pizza>>("Cart");
+
+            _cartService.CreateOrder(viewModel.OrderDetails, cartItems);
+
+            //Remove all Items from Session
+            HttpContext.Session.Remove("Cart");
+
+            return RedirectToAction("Index", "Cart");
         }
     }
 }

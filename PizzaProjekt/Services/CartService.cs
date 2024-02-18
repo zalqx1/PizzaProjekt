@@ -2,27 +2,54 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using PizzaProjekt.Database;
+using PizzaProjekt.Models;
 
 namespace PizzaProjekt.Services
 {
     public class CartService
     {
-        public List<string> ProcessCart(IFormCollection formData)
+        private readonly DatabaseContext _dbContext;
+
+        public CartService(DatabaseContext dbContext)
         {
-            var selectedItems = new List<string>();
+            _dbContext = dbContext;
+        }
+        public void CreateOrder(Orders order, List<Pizza> cartItems)
+        {
+            // Add and save Order Data to Database
+            _dbContext.Orders.Add(order);
+            _dbContext.SaveChanges();
 
-            foreach (var key in formData.Keys)
+            int ordersId = order.id;
+
+            foreach (var pizza in cartItems)
             {
-                var values = formData[key];
+                // Add and save Pizza Data to Database
+                _dbContext.Pizza.Add(pizza);
+                _dbContext.SaveChanges();
 
-                if (values.Contains("true", StringComparer.OrdinalIgnoreCase))
+                int pizzaId = pizza.Id;
+
+                foreach (var pizzaIngredient in pizza.PizzaIngredients)
                 {
-                    selectedItems.Add(key);
-                }
-            }
+                    pizzaIngredient.PizzaId = pizzaId;
 
-            return selectedItems;
+                    // Add and save PizzaIngredients Data to Database
+                    _dbContext.PizzaIngredients.Add(pizzaIngredient);
+                    _dbContext.SaveChanges();
+                }
+
+                OrdersPizza ordersPizza = new OrdersPizza
+                {
+                    OrdersId = ordersId,
+                    PizzaId = pizzaId
+                };
+                
+                // Add and save OrdersPizza Data to Database
+                _dbContext.OrdersPizza.Add(ordersPizza);
+                _dbContext.SaveChanges();
+            }
         }
     }
 }
