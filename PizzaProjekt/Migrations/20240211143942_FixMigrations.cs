@@ -32,7 +32,7 @@ namespace PizzaProjekt.Migrations
                     postCode = table.Column<int>(nullable: false),
                     city = table.Column<string>(nullable: true),
                     name = table.Column<string>(nullable: true),
-                    nachname = table.Column<string>(nullable: true)
+                    surname = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

@@ -16,6 +16,8 @@ namespace PizzaProjekt.Database
         public DbSet<Ingredients> Ingredients { get; set; }
         public DbSet<Orders> Orders { get; set; }
         public DbSet<Pizza> Pizza { get; set; }
+        public DbSet<OrdersPizza> OrdersPizza { get; set; }
+        public DbSet<PizzaIngredients> PizzaIngredients { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -33,7 +33,7 @@ namespace PizzaProjekt.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrdersPizza", x => new { x.OrdersId, x.PizzaId });
+                    table.PrimaryKey("PK_OrdersPizza", x => new { x.id });
                     table.ForeignKey(
                         name: "FK_OrdersPizza_Orders_OrdersId",
                         column: x => x.OrdersId,
@@ -58,7 +58,7 @@ namespace PizzaProjekt.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PizzaIngredients", x => new { x.PizzaId, x.IngredientsId });
+                    table.PrimaryKey("PK_PizzaIngredients", x => new { x.id });
                     table.ForeignKey(
                         name: "FK_PizzaIngredients_Ingredients_IngredientsId",
                         column: x => x.IngredientsId,
