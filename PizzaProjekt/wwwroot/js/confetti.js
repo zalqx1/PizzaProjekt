@@ -1,19 +1,6 @@
-//import confetti from 'https://cdn.skypack.dev/canvas-confetti';
 
-const PriceButton = document.querySelector(".configurator__price-button");
-
-//function makeConfetti() {
- //   confetti()
-//}
-
-//PriceButton.addEventListener("click", makeConfetti)
-
-PriceButton.addEventListener("click", function () {
-   alert("Ihre Bestellung wurde zum Warenkorb hinzugefügt.")
-})
 
 // for starting the confetti 
-
 const start = () => {
     setTimeout(function () {
         confetti.start()
@@ -21,14 +8,11 @@ const start = () => {
 };
 
 //  for stopping the confetti 
-
 const stop = () => {
     setTimeout(function () {
         confetti.stop()
     }, 7000); // 5000 is time that after 5 second stop the confetti ( 5000 = 5 sec)
 };
-
-//PriceButton.addEventListener("click", makeConfetti)
 
 //function makeConfetti() {
     start();

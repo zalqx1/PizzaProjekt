@@ -78,6 +78,10 @@ namespace PizzaProjekt.Controllers
         {
             return View();
         }
+        public IActionResult Success()
+        {
+            return View();
+        }
 
         public IActionResult Order(CheckoutFormViewModel viewModel)
         {

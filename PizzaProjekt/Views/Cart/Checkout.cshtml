@@ -17,7 +17,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="checkout__image-container">
-                                <h3 class="checkout__title">DEINE PIZZA IST AUF DEM WEG ZU DIR</h3>
+                                <h3 class="checkout__title">NUR NOCH 1 SCHRITT ZU DEINER PIZZA</h3>
                                 <img class="checkout__image" src="~/Bilder/scooter.gif" />
                             </div>
                         </div>
@@ -32,32 +32,32 @@
                         <div class="contact-details">
                             <div class="contact__item">
                                 <p class="contact__headline">Vorname</p>
-                                <input class="contact__input" name="OrderDetails.name"></input>
+                                <input class="contact__input" name="OrderDetails.name" required="required"></input>
                             </div>
                             
                             <div class="contact__item">
                                 <p class="contact__headline">Nachname</p>
-                                <input class="contact__input" name="OrderDetails.surname"></input>
+                                <input class="contact__input" name="OrderDetails.surname" required="required"></input>
                             </div>
 
                             <div class="contact__item">
                                 <p class="contact__headline">Strasse</p>
-                                <input class="contact__input" name="OrderDetails.street"></input>
+                                <input class="contact__input" name="OrderDetails.street" required="required"></input>
                             </div> 
                             
                             <div class="contact__item">
                                 <p class="contact__headline">Hausnummer</p>
-                                <input class="contact__input" name="OrderDetails.houseNumber"></input>
+                                <input class="contact__input" name="OrderDetails.houseNumber" required="required"></input>
                             </div>
 
                             <div class="contact__item">
                                 <p class="contact__headline">PLZ</p>
-                                <input type="number" min="0" class="contact__input" name="OrderDetails.postCode"></input>
+                                <input type="number" min="0" class="contact__input" name="OrderDetails.postCode" required="required"></input>
                             </div>
 
                             <div class="contact__item">
                                 <p class="contact__headline">Stadt</p>
-                                <input class="contact__input" name="OrderDetails.city"></input>
+                                <input class="contact__input" name="OrderDetails.city" required="required"></input>
                             </div>
                             <div class="contact__item">
                                 <p class="contact__headline">Telefon</p>
@@ -65,7 +65,7 @@
                             </div>
                         </div>
 
-                        <div class="cart-overview">
+                        @*<div class="cart-overview">
                             <div class="contact__item overview__item">
                                 <p class="contact__headline overview__headline">Bestellung:</p>
                                 <div class="contact__input overview_order">Bestellung einfuegen</div>
@@ -75,9 +75,10 @@
                                 <p class="contact__headline price__headline">Preis:</p>
                                 <div class="contact__input price__order">Preis einfuegen</div>
                             </div>
-
+                        *@
                             <div class="checkout__button--container">
-                                <button type="submit" value="Submit" class="checkout__button">
+                          
+                                <button class="checkout__button" asp-controller="Cart" asp-action="Checkout">
                                     <p class="button__text">BESTELLEN</p>
                                     <div class="button__cart">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
