@@ -1082,8 +1082,6 @@ C:\Users\Jugo\source\repos\PizzaProjekt\PizzaProjekt\obj\Debug\netcoreapp3.1\Piz
 C:\Users\Jugo\source\repos\PizzaProjekt\PizzaProjekt\obj\Debug\netcoreapp3.1\PizzaProjekt.TagHelpers.output.cache
 C:\Users\Jugo\source\repos\PizzaProjekt\PizzaProjekt\obj\Debug\netcoreapp3.1\PizzaProjekt.RazorCoreGenerate.cache
 C:\Users\Jugo\source\repos\PizzaProjekt\PizzaProjekt\obj\Debug\netcoreapp3.1\Razor\Pages\About.cshtml.g.cs
-C:\Users\Jugo\source\repos\PizzaProjekt\PizzaProjekt\obj\Debug\netcoreapp3.1\Razor\Pages\Cart.cshtml.g.cs
-C:\Users\Jugo\source\repos\PizzaProjekt\PizzaProjekt\obj\Debug\netcoreapp3.1\Razor\Pages\CartInformation.cshtml.g.cs
 C:\Users\Jugo\source\repos\PizzaProjekt\PizzaProjekt\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\Jugo\source\repos\PizzaProjekt\PizzaProjekt\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\Jugo\source\repos\PizzaProjekt\PizzaProjekt\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -1884,3 +1882,5 @@ C:\Users\colin\source\repos\PizzaProjektNew\PizzaProjekt\obj\Debug\netcoreapp3.1
 C:\Users\colin\source\repos\PizzaProjektNew\PizzaProjekt\obj\Debug\netcoreapp3.1\PizzaProjekt.pdb
 C:\Users\colin\source\repos\PizzaProjektNew\PizzaProjekt\obj\Debug\netcoreapp3.1\PizzaProjekt.genruntimeconfig.cache
 C:\Users\colin\source\repos\PizzaProjektNew\PizzaProjekt\obj\Debug\netcoreapp3.1\Razor\Views\Success\Index.cshtml.g.cs
+C:\Users\Jugo\source\repos\PizzaProjekt\PizzaProjekt\obj\Debug\netcoreapp3.1\Razor\Pages\HeaderCart.cshtml.g.cs
+C:\Users\Jugo\source\repos\PizzaProjekt\PizzaProjekt\obj\Debug\netcoreapp3.1\Razor\Views\Success\Index.cshtml.g.cs

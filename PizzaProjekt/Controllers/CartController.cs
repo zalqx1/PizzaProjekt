@@ -25,7 +25,13 @@ namespace PizzaProjekt.Controllers
         {
             List<Pizza> cartItems = HttpContext.Session.Get<List<Pizza>>("Cart") ?? new List<Pizza>();
 
-            return View(cartItems);
+            var viewModel = new CartViewModel
+            {
+                CartItems = cartItems,
+                CartItemCount = cartItems.Count
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]

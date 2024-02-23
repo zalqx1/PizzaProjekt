@@ -9,6 +9,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using PizzaProjekt.Repositories;
 using PizzaProjekt.ViewModels;
+using Microsoft.AspNetCore.Http;
+using PizzaProjekt.Extensions;
 
 namespace PizzaProjekt.Controllers
 {
@@ -27,12 +29,15 @@ namespace PizzaProjekt.Controllers
         public IActionResult Index()
         {
             List<Ingredients> availableIngredients = _ingredientsRepository.GetAll();
+            var existingCart = HttpContext.Session.Get<List<Pizza>>("Cart") ?? new List<Pizza>();
+
             var viewModel = new ConfiguratorFormViewModel
             {
                 AvailableIngredients = availableIngredients,
                 GroupedIngredients = availableIngredients
                     .GroupBy(ingredient => ingredient.gruppe)
-                    .ToDictionary(group => group.Key, group => group.ToList())
+                    .ToDictionary(group => group.Key, group => group.ToList()),
+                CartItemCount = existingCart.Count
             };
 
             return View(viewModel);

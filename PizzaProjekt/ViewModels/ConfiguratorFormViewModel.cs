@@ -18,5 +18,7 @@ namespace PizzaProjekt.ViewModels
         public List<Ingredients> AvailableIngredients { get; set; }
         public Dictionary<string, List<Ingredients>> GroupedIngredients { get; set; }
         public List<int> SelectedIngredientIds { get; set; }
+
+        public int CartItemCount { get; set; }
     }
 }
