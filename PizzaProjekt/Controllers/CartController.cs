@@ -93,7 +93,14 @@ namespace PizzaProjekt.Controllers
         }
         public IActionResult Success()
         {
-            return View();
+            List<Pizza> cartItems = HttpContext.Session.Get<List<Pizza>>("Cart") ?? new List<Pizza>();
+
+            var viewModel = new SuccessViewModel
+            {
+                CartItemCount = cartItems.Count
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult Order(CheckoutFormViewModel viewModel)
@@ -106,7 +113,7 @@ namespace PizzaProjekt.Controllers
             //Remove all Items from Session
             HttpContext.Session.Remove("Cart");
 
-            return RedirectToAction("Index", "Cart");
+            return RedirectToAction("Success", "Cart");
         }
     }
 }

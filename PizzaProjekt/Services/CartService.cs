@@ -25,20 +25,17 @@ namespace PizzaProjekt.Services
 
             foreach (var pizza in cartItems)
             {
+                // Ensure PizzaIngredients are attached to the context
+                foreach (var pizzaIngredient in pizza.PizzaIngredients)
+                {
+                    _dbContext.Attach(pizzaIngredient);
+                }
+
                 // Add and save Pizza Data to Database
                 _dbContext.Pizza.Add(pizza);
                 _dbContext.SaveChanges();
 
                 int pizzaId = pizza.Id;
-
-                foreach (var pizzaIngredient in pizza.PizzaIngredients)
-                {
-                    pizzaIngredient.PizzaId = pizzaId;
-
-                    // Add and save PizzaIngredients Data to Database
-                    _dbContext.PizzaIngredients.Add(pizzaIngredient);
-                    _dbContext.SaveChanges();
-                }
 
                 OrdersPizza ordersPizza = new OrdersPizza
                 {
