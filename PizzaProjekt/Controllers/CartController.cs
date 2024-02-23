@@ -82,7 +82,14 @@ namespace PizzaProjekt.Controllers
         }
         public IActionResult Checkout()
         {
-            return View();
+            List<Pizza> cartItems = HttpContext.Session.Get<List<Pizza>>("Cart") ?? new List<Pizza>();
+
+            var viewModel = new CheckoutViewModel
+            {
+                CartItemCount = cartItems.Count
+            };
+
+            return View(viewModel);
         }
         public IActionResult Success()
         {
